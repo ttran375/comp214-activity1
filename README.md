@@ -1,8 +1,13 @@
 # Group Lab Ac,vity #1
 
+## Question 1
+
 1. Create a procedure that accepts a category name and retrieves the product and the total
 sales for the category.
 a. Use an anonymous block to call the procedure and output the result.
+
+## Question 2
+
 2. Create a stored procedure to retrieve the n most expensive products, where n is a number.
 Use an anonymous block to call the stored procedure and display the results.
 3. Challenge 6-1: Create a func/on to return a descrip/on for the coffee grind. The input
