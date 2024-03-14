@@ -1,3 +1,8 @@
+-- ## Question 1
+
+-- 1. Create a procedure that accepts a category name and retrieves the product and the total
+-- sales for the category.
+-- a. Use an anonymous block to call the procedure and output the result.
 CREATE OR REPLACE PROCEDURE GetCategorySales(
     category_name IN VARCHAR2
 ) AS
@@ -27,6 +32,46 @@ BEGIN
 END;
 /
 
+CREATE OR REPLACE PROCEDURE GetMostExpensiveProducts(
+    n IN NUMBER
+) IS
+BEGIN
+    FOR product IN (
+        SELECT
+            *
+        FROM
+            (
+                SELECT
+                    *
+                FROM
+                    Products
+                ORDER BY
+                    UnitPrice DESC
+            )
+        WHERE
+            ROWNUM <= n
+    ) LOOP
+        DBMS_OUTPUT.PUT_LINE('Product ID: '
+                             || product.ProductID
+                             || ', Product Name: '
+                             || product.ProductName
+                             || ', Unit Price: '
+                             || product.UnitPrice);
+    END LOOP;
+END;
+/
+
+DECLARE
+    n NUMBER := 5; -- You can set the value of n as per your requirement
+BEGIN
+    GetMostExpensiveProducts(n);
+END;
+/
+
+-- ## Question 2
+
+-- 2. Create a stored procedure to retrieve the n most expensive products, where n is a number.
+-- Use an anonymous block to call the stored procedure and display the results.
 CREATE OR REPLACE PROCEDURE GetMostExpensiveProducts(
     n IN NUMBER
 ) IS

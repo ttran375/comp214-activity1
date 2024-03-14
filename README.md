@@ -13,12 +13,15 @@ Use an anonymous block to call the stored procedure and display the results.
 
 ## Question 3
 
-3. Challenge 6-1: Create a func/on to return a descrip/on for the coffee grind. The input
+3. Challenge 6-1: Create a function to return a description for the coffee grind. The input
 value 3 indicates “Whole Bean,” and the value 4 indicates “Ground.” If a NULL value is
 provided as input, the func/on should return N/A.
 a. First, test the func/on with an anonymous block.
 b. Second, test an SQL statement on the BB_BASKETITEM table, using the OPTION2
 column as input.
+
+## Question 4
+
 4. Challenge 6-2: Create a func/on to calculate the total pounds of coffee in an order. Keep
 in mind that the OPTION1 column in the BB_BASKETITEM table indicates the purchase of
 a half or whole pound. (This column is NULL for equipment items.) Also, you need to
