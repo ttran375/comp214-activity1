@@ -10,6 +10,9 @@ a. Use an anonymous block to call the procedure and output the result.
 
 2. Create a stored procedure to retrieve the n most expensive products, where n is a number.
 Use an anonymous block to call the stored procedure and display the results.
+
+## Question 3
+
 3. Challenge 6-1: Create a func/on to return a descrip/on for the coffee grind. The input
 value 3 indicates “Whole Bean,” and the value 4 indicates “Ground.” If a NULL value is
 provided as input, the func/on should return N/A.
