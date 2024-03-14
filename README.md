@@ -22,10 +22,10 @@ column as input.
 
 ## Question 4
 
-4. Challenge 6-2: Create a func/on to calculate the total pounds of coffee in an order. Keep
+4. Challenge 6-2: Create a function to calculate the total pounds of coffee in an order. Keep
 in mind that the OPTION1 column in the BB_BASKETITEM table indicates the purchase of
 a half or whole pound. (This column is NULL for equipment items.) Also, you need to
-take the quan/ty of each item ordered into account. The input value to the func/on
+take the quantity of each item ordered into account. The input value to the func/on
 should be a basket ID.
 a. First, test the func/on with basket ID 3, using an anonymous block.
 b. Second, test the func/on in an SQL statement, using the BB_BASKET table, that
