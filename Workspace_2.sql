@@ -1,5 +1,4 @@
 -- ## Question 3
-
 -- 3. Challenge 6-1: Create a function to return a description for the coffee grind. The input
 -- value 3 indicates “Whole Bean,” and the value 4 indicates “Ground.” If a NULL value is
 -- provided as input, the func/on should return N/A.
@@ -33,3 +32,19 @@ BEGIN
                          || l_result);
 END;
 /
+
+DECLARE
+    l_grind_id NUMBER := 3; -- Change this value to test different scenarios
+    l_result   VARCHAR2(50);
+BEGIN
+    l_result := get_coffee_grind_description(l_grind_id);
+    DBMS_OUTPUT.PUT_LINE('Coffee Grind Description: '
+                         || l_result);
+END;
+/
+
+SELECT
+    bb_basketitem.option2,
+    get_coffee_grind_description(bb_basketitem.option2) AS coffee_grind_description
+FROM
+    bb_basketitem;

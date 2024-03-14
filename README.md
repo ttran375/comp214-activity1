@@ -1,4 +1,4 @@
-# Group Lab Ac,vity #1
+# Group Lab Activity #1
 
 ## Question 1
 
