@@ -1,4 +1,3 @@
--- ## Question 1
 -- 1. Create a procedure that accepts a category name and retrieves the product and the total
 -- sales for the category.
 -- a. Use an anonymous block to call the procedure and output the result.
@@ -31,43 +30,6 @@ BEGIN
 END;
 /
 
-CREATE OR REPLACE PROCEDURE GetMostExpensiveProducts(
-    n IN NUMBER
-) IS
-BEGIN
-    FOR product IN (
-        SELECT
-            *
-        FROM
-            (
-                SELECT
-                    *
-                FROM
-                    Products
-                ORDER BY
-                    UnitPrice DESC
-            )
-        WHERE
-            ROWNUM <= n
-    ) LOOP
-        DBMS_OUTPUT.PUT_LINE('Product ID: '
-                             || product.ProductID
-                             || ', Product Name: '
-                             || product.ProductName
-                             || ', Unit Price: '
-                             || product.UnitPrice);
-    END LOOP;
-END;
-/
-
-DECLARE
-    n NUMBER := 5; -- You can set the value of n as per your requirement
-BEGIN
-    GetMostExpensiveProducts(n);
-END;
-/
-
--- ## Question 2
 -- 2. Create a stored procedure to retrieve the n most expensive products, where n is a number.
 -- Use an anonymous block to call the stored procedure and display the results.
 CREATE OR REPLACE PROCEDURE GetMostExpensiveProducts(
@@ -142,16 +104,17 @@ END;
 /
 
 DECLARE
-  l_grind_id NUMBER := 3; -- Change this value to test different scenarios
-  l_result VARCHAR2(50);
+    l_grind_id NUMBER := 3; -- Change this value to test different scenarios
+    l_result   VARCHAR2(50);
 BEGIN
-  l_result := get_coffee_grind_description(l_grind_id);
-  DBMS_OUTPUT.PUT_LINE('Coffee Grind Description: ' || l_result);
+    l_result := get_coffee_grind_description(l_grind_id);
+    DBMS_OUTPUT.PUT_LINE('Coffee Grind Description: '
+                         || l_result);
 END;
 /
 
 SELECT
-  bb_basketitem.option2,
-  get_coffee_grind_description(bb_basketitem.option2) AS coffee_grind_description
+    bb_basketitem.option2,
+    get_coffee_grind_description(bb_basketitem.option2) AS coffee_grind_description
 FROM
-  bb_basketitem;
+    bb_basketitem;
